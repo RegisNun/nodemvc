@@ -15,13 +15,13 @@ const usuariosRouter = require('./router/usuarios-route');
 const customerRouter = require('./router/customer-route');
 const orderRouter    = require('./router/order-route');
 
-//connecta com o banco
-// mongoose.connect(config.connectionString);
+// connecta com o banco
+mongoose.connect(config.connectionString);
 
-// const connection = mongoose.connection;
-// connection.once('open', () => {
-//     console.log("MongoDB database connection established successfully");
-// })
+const connection = mongoose.connection;
+connection.once('open', () => {
+    console.log("MongoDB database connection established successfully");
+})
 
 
 //Funciona como um mideware --> verifica antes de chegar na rota
